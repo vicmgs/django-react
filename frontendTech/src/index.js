@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom'
 import { createStore, combineReducers } from 'redux'
 import { Provider, connect } from 'react-redux'
 
-import todos from './common/reducers/todos.js'
+import todos from './common/reducers/todos'
 import visibilityFilter from './common/reducers/visibilityFilter'
-import TodoApp from './common/TodoApp.jsx'
+import TodoApp from './common/TodoApp'
 
 const store = createStore(combineReducers({ todos, visibilityFilter }))
 
