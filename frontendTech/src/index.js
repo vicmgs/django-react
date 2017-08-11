@@ -1,16 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore, combineReducers } from 'redux'
-import { Provider, connect } from 'react-redux'
-
-import todos from './common/reducers/todos'
-import visibilityFilter from './common/reducers/visibilityFilter'
-import TodoApp from './common/TodoApp'
-
-const store = createStore(combineReducers({ todos, visibilityFilter }))
+import { configureStore } from './common/configureStore'
+import Root from './common/components/Root'
 
 ReactDOM.render(
-  <Provider store={store}>
-    <TodoApp />
-  </Provider>, document.getElementById('app')
+  <Root store={configureStore()}/>,
+  document.getElementById('app')
 )
