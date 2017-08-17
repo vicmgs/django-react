@@ -1,6 +1,6 @@
 import { createStore, combineReducers } from 'redux'
 import throttle from 'lodash/throttle'
-import todos from './reducers/todos'
+import todos, * as fromTodos from './reducers/todos'
 import { loadState, saveState } from './helpers/localStorage'
 
 export const configureStore = () => {
@@ -16,3 +16,6 @@ export const configureStore = () => {
 
   return store
 }
+
+export const getVisibleTodos = (state, filter) =>
+  fromTodos.getVisibleTodos(state.todos, filter)

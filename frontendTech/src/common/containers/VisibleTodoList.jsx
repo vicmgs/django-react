@@ -3,10 +3,10 @@ import { withRouter } from 'react-router'
 
 import TodoList from '../components/TodoList.jsx'
 import * as Actions from '../actions/actions.js'
-import * as TodoHelpers from '../helpers/todos.js'
+import { getVisibleTodos } from '../configureStore'
 
 const mapStateToTodoProps = (state, { match }) => ({
-  todos: TodoHelpers.getVisibleTodos(state.todos, match.params.filter || 'all')
+  todos: getVisibleTodos(state, match.params.filter || 'all')
 })
 
 const mapDispatchToTodoProps = (dispatch) => ({
