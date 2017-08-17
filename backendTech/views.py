@@ -1,4 +1,6 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 
 def index(request):
-    return HttpResponse('{ data: "test" }')
+    return render(request, 'backendTech/index.html')
+    # return HttpResponse('{ data: "test" }')
