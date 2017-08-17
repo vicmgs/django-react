@@ -60,7 +60,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "c99ee2b4f14600a8c79b"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "65f502d8857db7580ece"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -39804,6 +39804,8 @@ var getVisibleTodos = exports.getVisibleTodos = function getVisibleTodos(state, 
       return allTodos.filter(function (t) {
         return !t.completed;
       });
+    default:
+      return allTodos;
   }
 };
 

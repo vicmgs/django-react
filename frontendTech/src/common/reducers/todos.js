@@ -38,5 +38,7 @@ export const getVisibleTodos = (state, filter) => {
       return allTodos.filter((t) => t.completed)
     case 'active':
       return allTodos.filter((t) => !t.completed)
+    default:
+      return allTodos
   }
 }
