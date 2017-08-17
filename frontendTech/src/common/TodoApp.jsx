@@ -7,7 +7,7 @@ import Footer from './components/Footer.jsx'
 const TodoApp = ({ match }) => (
   <div>
     <AddTodo />
-    <VisibleTodoList filter={ match.params.filter || 'all' }/>
+    <VisibleTodoList />
     <Footer />
   </div>
 )
