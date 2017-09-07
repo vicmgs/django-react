@@ -1,19 +1,9 @@
 import { createStore, combineReducers } from 'redux'
-import throttle from 'lodash/throttle'
 import todos, * as fromTodos from './reducers/todos'
-import { loadState, saveState } from './helpers/localStorage'
+import { fetchTodos } from './api/todos'
 
 export const configureStore = () => {
-  const persistedState = loadState()
-
-  const store = createStore(combineReducers({ todos }), persistedState)
-
-  store.subscribe(throttle(() => {
-    saveState({
-      todos: store.getState().todos
-    })
-  }, 1000))
-
+  const store = createStore(combineReducers({ todos }))
   return store
 }
 
